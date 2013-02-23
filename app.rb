@@ -1,12 +1,10 @@
 require 'sinatra'
 require 'json'
 require 'nokogiri'
-require 'open-uri'
 
 get '/events/:id' do
   content_type :json
   url = "https://developers.google.com/events/#{params[:id]}/"
-  puts url
   data = Nokogiri::HTML(open(url))
 
   map = Hash.new
@@ -18,6 +16,3 @@ get '/events/:id' do
 
   map.to_json
 end
-
-
-
