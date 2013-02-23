@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'json'
 require 'nokogiri'
+require 'open-uri'
 
 get '/events/:id' do
   content_type :json
